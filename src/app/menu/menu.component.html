@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #5487b6;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="./assets/kc.png" alt="" width="80" height="80">
+            <label class="fs-3">FocuS</label>
+          </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+          <a class="nav-link" *ngIf="rol=='A'">Usuarios</a>
+          <a class="nav-link" (click)="goTemas()">Temas</a>
+          <a class="nav-link" href="#">Salir</a>
+          <a class="nav-link active" aria-current="page" href="#" style="color: white;">{{(nombre)}}</a>
+        </div>
+      </div>
+    </div>
+  </nav>

@@ -1,0 +1,104 @@
+<app-menu></app-menu>
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <div class="card" style="width: 18rem;" ng-cloak>
+                <div class="card-header">
+                    
+                </div>
+                <div class="card-body">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><i class="bi bi-chat-right-quote"></i></div>
+                        </div>
+                        <input type="text" class="form-control" id="topic" 
+                        placeholder="Nombre del tema" [(ngModel)]="tema">
+                    </div>
+                    
+                </div>
+                <div class="card-footer text-center">
+                    <button (click)="agregar()" type="button" class="btn btn-primary" id="agregar"><i class="bi bi-plus-circle"></i> Agregar</button>
+                </div>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <table class="table table-hover table-dark">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Tema</th>
+                        <th>...</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let topic of topics">
+                        <td>{{topic.id}}</td>
+                        <td>{{topic.tema}}</td>
+                        <td>
+                            <button type="button" class="btn btn-info" 
+                            data-bs-toggle="modal" data-bs-target="#modificaTema" 
+                            (click)="editarTema(topic)">
+                            <i class="bi bi-pencil-square"></i>
+                              </button>
+                              <button type="button" class="btn btn-danger" 
+                              data-bs-toggle="modal" data-bs-target="#eliminaTema" (click)="editarTema(topic)">
+                              <i class="bi bi-trash-fill"></i>
+                              </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+
+<!-- Modal Modificar Tema -->
+<div class="modal fade" id="modificaTema" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modificar</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            {{temaEdit.id}}
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="bi bi-chat-right-quote"></i></div>
+                </div>
+                <input type="text" class="form-control" id="topicEdit" 
+                placeholder="Nombre del tema" [(ngModel)]="temaEdit.tema">
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="guardarCambios()">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Eliminar Tema -->
+<div class="modal fade" id="eliminaTema" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+           Esta seguro que desea eliminar el tema {{temaEdit.tema}} con el id {{temaEdit.id}}?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="eliminarTema()">Si</button>
+        </div>
+      </div>
+    </div>
+  </div>
