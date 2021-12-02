@@ -15,11 +15,7 @@ export class InicioComponent implements OnInit {
 
   constructor(private pr01: Pr01Service, private msgbox: ToastrService) { }
 
-  ngOnInit(): void {
-    //console.log(this.pr01.getCuenta().user)
-    this.pr01.getCuenta()
-    this.llenarTabla();
-  }
+  
 
   llenarTabla(){
     this.pr01.topics().subscribe(
@@ -70,6 +66,10 @@ export class InicioComponent implements OnInit {
       }
     );
   } 
-
+  ngOnInit(): void {
+    console.log(this.pr01.getCuenta().user)
+    this.pr01.getCuenta()
+    this.llenarTabla();
+  }
 }
 

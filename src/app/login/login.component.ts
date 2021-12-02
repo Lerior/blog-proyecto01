@@ -38,6 +38,10 @@ export class LoginComponent implements OnInit {
     console.log("user:"+datos['user']['user'],datos['user']['nombre'],datos['user']['rol']);
   }
 
+  registrar(){
+    this.rt.navigate(['/registro']);
+  }
+
   // respuestaError(error:any){
   //   console.log(error)
   // }

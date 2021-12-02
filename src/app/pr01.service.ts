@@ -8,6 +8,7 @@ const URL:string = "http://localhost/pr01/public/";
 })
 export class Pr01Service {
   private cuenta = {user:'', nombre:'',rol:'', token:'' };
+  private temas = {id:'',tema:''};
   
   setCuenta(user:string, nombre:string, rol:string, token:string){
     this.cuenta.user = user;
@@ -48,6 +49,15 @@ export class Pr01Service {
     form.append('tema', tema);
     headers = headers.append('Authorization', this.cuenta.token);
     return this.http.post(URL + "topic", form, {headers:headers});
+  }
+  addUser(user:string, nom:string, pass:string){
+    let headers = new HttpHeaders;
+    let form = new FormData;
+    form.append('user', user);
+    form.append('nom', nom);
+    form.append('pass', pass);
+    headers = headers.append('Authorization', this.cuenta.token);
+    return this.http.post(URL + "user", form, {headers:headers});
   }
 
   editTopic(topic){

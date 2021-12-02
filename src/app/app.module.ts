@@ -20,7 +20,8 @@ const rutas: Route[] = [
   {path:'login', component: LoginComponent},
   {path:'inicio', component: InicioComponent},
   {path:'menu', component: MenuComponent},
-  {path:'temas', component: TemasComponent}
+  {path:'temas', component: TemasComponent},
+  {path:'registro', component: RegistroComponent}
 ]
 
 @NgModule({
