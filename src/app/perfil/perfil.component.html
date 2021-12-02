@@ -1,0 +1,81 @@
+<app-menu></app-menu>
+<p>
+
+</p>
+<div class="container">
+    <div class="row md-3">
+        <div class="col"></div>
+        <div class="col-md-6">
+            <div class=" rounded col">
+
+                <div class="card" ng-cloak>
+                    <div class="card-header">
+                    </div>
+                    <div class="container mt-3 bgDescrip rounded">
+                        <div class="media border p-3 rounded">
+                            <h1 class="bi bi-person-circle"></h1> <i class="mr-3 mt-3 rounded-circle">
+                                {{(user)}}
+                            </i>
+                            <div class="media-body mymediabody ">
+                                <h4>{{(nombre)}}</h4>
+                                <pre class="f">
+Usuario: {{(user)}} 
+Nombre: {{(nombre)}}
+Edad: ## 
+Telefono: 786-140-9538
+Correo: leonardogarcia3500@gmail.com
+                        </pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer" style="background-color: rgba(0, 128, 79, 0.474);">
+                        <p>
+
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="col"></div>
+        <div class="col-md-5">
+            <div class="row">
+                <div class="col">
+                    <table class="table table-hover rounded" style="background-color: rgba(46, 139, 122, 0.337);">
+                        <thead> <i style="background-color: rgba(27, 130, 90, 0.474);">
+                            Temas Seleccionados
+                        </i>
+                            <tr>
+                                <th>Id</th>
+                                <th>Tema</th>
+                                <th class="text-center">...</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let topic of topics">
+                                <td>{{topic.id}}</td>
+                                <td>{{topic.tema}}</td>
+                                <td class="text-end">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+        <div class="col"></div>
+        <p>
+
+        </p>
+        <div class="col"></div>
+        <p>
+
+        </p>
+
+        <div class="col"></div>
+    </div>
+</div>

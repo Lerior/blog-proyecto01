@@ -8,13 +8,18 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+        <div class="navbar-nav col-md-10">
           <a class="nav-link" *ngIf="rol=='A'">Usuarios</a>
           <a class="nav-link" (click)="goTemas()">Temas</a>
+          <a class="nav-link" (click)="goInicio()" *ngIf="rol=='A'">Modificar</a>
           <a class="nav-link" href="#">Salir</a>
-          <a class="nav-link active" aria-current="page" href="#" style="color: white;">{{(nombre)}}</a>
         </div>
+        <div class="col-md-2 text-end">          
+          <label class="border rounded pl-2 pr-2 px-2">
+          <a class="nav-link active" aria-current="page" (click)="goPerfil()" style="color: white;">{{(nombre)}}</a>
+          </label>
+      </div>
+
       </div>
     </div>
   </nav>

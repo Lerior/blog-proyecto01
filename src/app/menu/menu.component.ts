@@ -15,6 +15,12 @@ export class MenuComponent implements OnInit {
   goTemas(){
     this.rt.navigate(['/temas']);
   }
+  goInicio(){
+    this.rt.navigate(['/inicio']);
+  }
+  goPerfil(){
+    this.rt.navigate(['/perfil']);
+  }
 
   constructor(private rt: Router, private pr01: Pr01Service) { }
 
