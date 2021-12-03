@@ -1,0 +1,60 @@
+<app-menu></app-menu>
+<p>
+
+</p>
+<div class="row">
+    <div class="col"></div>
+    <div class="col-md-7">
+        <div class="row">
+            <div class="col">
+                <div class="card" ng-cloak>
+                    <div  style="background-color: rgba(27, 130, 90, 0.474);" class="card-header">
+                        <i >
+                                    Usuarios
+                                </i>
+                    </div>
+                    <div class="container mt-3 bgDescrip rounded">
+                <table class="table table-hover rounded" style="background-color: rgba(46, 139, 122, 0.337);">
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Nombre</th>
+                            <th>Edad</th>
+                            <th>E-mail</th>
+                            <th>#Telefono</th>
+
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let usuario of usuarios">
+                            <td>{{usuario.user}}</td>
+                            <td>{{usuario.nombre}}</td> 
+                            <td>{{usuario.edad}}</td>
+                            <td>{{usuario.email}}</td> 
+                            <td>{{usuario.tel}}</td> 
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-footer" style="background-color: rgba(0, 128, 79, 0.474);">
+                <p>
+
+                </p>
+            </div>
+        </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col"></div>
+    <p>
+
+    </p>
+    <div class="col"></div>
+    <p>
+
+    </p>
+
+    <div class="col"></div>
+</div>

@@ -12,54 +12,52 @@
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="bi bi-person-circle"></i></div>
                         </div>
-                        <input type="text" class="form-control" id="user" 
-                        placeholder="Nombre de usuario">
+                        <input type="text" class="form-control" id="userio" 
+                        placeholder="Nombre de usuario" [(ngModel)]="user">
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="bi bi-person"></i></div>
                         </div>
                         <input type="text" class="form-control" id="name" 
-                        placeholder="Nombre y apellido">
+                        placeholder="Nombre y apellido" [(ngModel)]="nombre">
                     </div>
-                    <div class="input-group">
+                    <div class="input-group  mb-3">
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="bi bi-lock-fill"></i></div>
                         </div>
                         <input type="password" class="form-control" id="password" 
-                        placeholder="Contraseña">
+                        placeholder="Contraseña" [(ngModel)]="pass">
                     </div>
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <div class="input-group-text"><i class="bi bi-lock"></i></div>
+                            
                         </div>
-                        <input type="password" class="form-control" id="password2" 
-                        placeholder="Confirmar contraseña">
-                        <div class="input-group">
+                        <div class="input-group  mb-3">
                             <div class="input-group-prepend">
                                 <div class="input-group-text"><i class="bi bi-calendar4"></i></div>
                             </div>
-                            <input type="number" class="form-control" id="edad" 
-                            placeholder="Edad">
+                            <input type="number" class="form-control" id="edades" 
+                            placeholder="Edad" [(ngModel)]="edad">
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <div class="input-group-text"><i class="bi bi-envelope-fill"></i></div>
                             </div>
-                            <input type="text" class="form-control" id="email" 
-                            placeholder="Correo electronico">
+                            <input type="text" class="form-control" id="emails" 
+                            placeholder="Correo electronico" [(ngModel)]="email">
                         </div>
-                        <div class="input-group">
+                        <div class="input-group  mb-3">
                             <div class="input-group-prepend">
                                 <div class="input-group-text"><i class="bi bi-telephone"></i></div>
                             </div>
                             <input type="number" class="form-control" id="numTel" 
-                            placeholder="Numero telefonico">
+                            placeholder="Numero telefonico" [(ngModel)]="tel">
                         </div>
                     </div>
                 </div>
                 <div class="card-footer text-center">
-                    <button type="button" class="btn btn-primary" id="registro">Registrar</button>
+                    <button type="button" class="btn btn-primary" (click)="agregar()" id="registro">Registrar</button>
                 </div>
             </div>
         </div>

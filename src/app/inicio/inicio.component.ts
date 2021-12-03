@@ -10,6 +10,7 @@ import { ToastrService } from 'ngx-toastr';
 export class InicioComponent implements OnInit {
   topics:any;
   tema='';
+  descr='';
   temaEdit:any;
   
 
@@ -30,7 +31,7 @@ export class InicioComponent implements OnInit {
   }
 
   agregar(){
-    this.pr01.addTopic(this.tema).subscribe(
+    this.pr01.addTopic(this.tema, this.descr).subscribe(
       datos => {
         this.llenarTabla();
       }

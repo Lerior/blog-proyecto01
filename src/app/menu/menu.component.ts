@@ -21,6 +21,9 @@ export class MenuComponent implements OnInit {
   goPerfil(){
     this.rt.navigate(['/perfil']);
   }
+  goUsuarios(){
+    this.rt.navigate(['/usuarios']);
+  }
 
   constructor(private rt: Router, private pr01: Pr01Service) { }
 

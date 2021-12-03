@@ -11,6 +11,9 @@ export class PerfilComponent implements OnInit {
   user='';
   rol = '';
   nombre='';
+  edad='';
+  tel='';
+  email='';
   topics:any;
   tema='';
   temaEdit:any;
@@ -30,6 +33,9 @@ export class PerfilComponent implements OnInit {
     this.user = this.pr01.getCuenta().user;
     this.rol = this.pr01.getCuenta().rol;
     this.nombre=this.pr01.getCuenta().nombre;
+    this.edad=this.pr01.getCuenta().edad;
+    this.tel=this.pr01.getCuenta().tel;
+    this.email=this.pr01.getCuenta().email;
     this.pr01.getCuenta()
     this.llenarTabla();
   }

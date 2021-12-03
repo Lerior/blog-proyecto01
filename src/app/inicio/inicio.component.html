@@ -1,6 +1,6 @@
 <app-menu></app-menu>
 <p>
-  
+
 </p>
 <div class="container">
   <div class="row mg-3">
@@ -25,7 +25,7 @@
 
                 </div>
                 <textarea type="text" style="width: 25rem;" class="form-control" id="desc"
-                  placeholder="Descripcion del tema"></textarea>
+                  placeholder="Descripcion del tema" [(ngModel)]="descr"></textarea>
               </div>
 
             </div>
@@ -42,32 +42,47 @@
       </p>
       <div class="row">
         <div class="col">
-          <table class="table table-hover rounded" style="background-color: rgba(46, 139, 122, 0.337);">
-            <thead>
-              <tr>
-                <th>Id</th>
-                <th>Tema</th>
-                <th class="text-center">...</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let topic of topics">
-                <td>{{topic.id}}</td>
-                <td>{{topic.tema}}</td>
-                <td class="text-end">
-                  <button type="button" style="background-color: rgba(36, 126, 194, 0.515);" class="btn" data-bs-toggle="modal" data-bs-target="#modificaTema"
-                    (click)="editarTema(topic)">
-                    <i class="bi bi-pencil-square"></i>
-                  </button>
-                  &nbsp;
-                  <button type="button" style="background-color: rgba(223, 63, 63, 0.563);" class="btn" data-bs-toggle="modal" data-bs-target="#eliminaTema"
-                    (click)="editarTema(topic)">
-                    <i class="bi bi-x-square"></i>
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="card" ng-cloak>
+            <div style="background-color: rgba(27, 130, 90, 0.474);" class="card-header">
+              <i>
+                Temas
+              </i>
+            </div>
+            <div class="container mt-3 bgDescrip rounded">
+
+              <table class="table table-hover rounded" style="background-color: rgba(46, 139, 122, 0.337);">
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Tema</th>
+                    <th class="text-center"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let topic of topics">
+                    <td>{{topic.id}}</td>
+                    <td>{{topic.tema}}</td>
+                    <td class="text-end">
+                      <button type="button" style="background-color: rgba(36, 126, 194, 0.515);" class="btn"
+                        data-bs-toggle="modal" data-bs-target="#modificaTema" (click)="editarTema(topic)">
+                        <i class="bi bi-pencil-square"></i>
+                      </button>
+                      &nbsp;
+                      <button type="button" style="background-color: rgba(223, 63, 63, 0.563);" class="btn"
+                        data-bs-toggle="modal" data-bs-target="#eliminaTema" (click)="editarTema(topic)">
+                        <i class="bi bi-x-square"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="card-footer" style="background-color: rgba(0, 128, 79, 0.474);">
+              <p>
+
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

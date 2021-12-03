@@ -9,7 +9,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav col-md-10">
-          <a class="nav-link" *ngIf="rol=='A'">Usuarios</a>
+          <a class="nav-link" (click)="goUsuarios()" *ngIf="rol=='A'">Usuarios</a>
           <a class="nav-link" (click)="goTemas()">Temas</a>
           <a class="nav-link" (click)="goInicio()" *ngIf="rol=='A'">Modificar</a>
           <a class="nav-link" href="#">Salir</a>

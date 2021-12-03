@@ -34,8 +34,8 @@ export class LoginComponent implements OnInit {
       } );
   }
   respuesta(datos:any){
-    this.pr01.setCuenta(datos['user']['user'],datos['user']['nombre'],datos['user']['rol'],datos['token']);
-    console.log("user:"+datos['user']['user'],datos['user']['nombre'],datos['user']['rol']);
+    this.pr01.setCuenta(datos['user']['user'],datos['user']['nombre'],datos['user']['rol'],datos['token'],datos['user']['edad'],datos['user']['tel'],datos['user']['email']);
+    console.log("user:"+datos['user']['user'],datos['user']['nombre'],datos['user']['rol'],datos['token'],datos['user']['edad'],datos['user']['tel'],datos['user']['email']);
   }
 
   registrar(){

@@ -6,7 +6,7 @@
     <div class="row md-3">
         <div class="col" *ngFor="let topic of topics">
             <div class="col"></div>
-            <div class="card" style="width: 18rem;" ng-cloak>
+            <div class="card" style="width: 18rem; height: 20rem;" ng-cloak>
                 <div class="card-header">
                 </div>
                 <div class="card-body rounded" style="background-color: rgba(77, 201, 195, 0.364);">
@@ -25,9 +25,7 @@
 
                         </p>
                         <h6 style="font-style: oblique;">
-                            [Aqui deberia ir una descripcion un tanto larga y este texto es solo de prueba, por lo que
-                            no es necesario que lo leas completo... enserio no lo hagas......... para de leer por
-                            favor...]
+                            {{topic.descr}}
                         </h6>
                     </div>
                 </div>

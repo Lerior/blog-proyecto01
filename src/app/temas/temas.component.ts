@@ -11,6 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 export class TemasComponent implements OnInit {
   topics:any;
   tema='';
+  descr='';
   temaEdit:any;
   
   constructor(private rt: Router, private pr01: Pr01Service, private msgbox: ToastrService) { }

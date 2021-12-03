@@ -19,11 +19,11 @@
                             <div class="media-body mymediabody ">
                                 <h4>{{(nombre)}}</h4>
                                 <pre class="f">
-Usuario: {{(user)}} 
-Nombre: {{(nombre)}}
-Edad: ## 
-Telefono: 786-140-9538
-Correo: leonardogarcia3500@gmail.com
+Usuario:    {{(user)}} 
+Nombre:     {{(nombre)}}
+Edad:       {{(edad)}} 
+Telefono:   {{(tel)}}
+Correo:     {{(email)}}
                         </pre>
                             </div>
                         </div>
@@ -44,25 +44,42 @@ Correo: leonardogarcia3500@gmail.com
         <div class="col-md-5">
             <div class="row">
                 <div class="col">
-                    <table class="table table-hover rounded" style="background-color: rgba(46, 139, 122, 0.337);">
-                        <thead> <i style="background-color: rgba(27, 130, 90, 0.474);">
-                            Temas Seleccionados
-                        </i>
-                            <tr>
-                                <th>Id</th>
-                                <th>Tema</th>
-                                <th class="text-center">...</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let topic of topics">
-                                <td>{{topic.id}}</td>
-                                <td>{{topic.tema}}</td>
-                                <td class="text-end">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+
+                    <div class="card" ng-cloak>
+                        <div  style="background-color: rgba(27, 130, 90, 0.474);" class="card-header">
+                            <i >
+                                        Temas Seleccionados
+                                    </i>
+                        </div>
+                        <div class="container mt-3 bgDescrip rounded">
+                            
+                            <table class="table table-hover rounded"
+                                style="background-color: rgba(46, 139, 122, 0.337);">
+                                <thead> 
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Tema</th>
+                                        <th class="text-center">...</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let topic of topics">
+                                        <td>{{topic.id}}</td>
+                                        <td>{{topic.tema}}</td>
+                                        <td class="text-end">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                        </div>
+                        <div class="card-footer" style="background-color: rgba(0, 128, 79, 0.474);">
+                            <p>
+
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 

@@ -15,6 +15,7 @@ import { MenuComponent } from './menu/menu.component';
 import { TemasComponent } from './temas/temas.component';
 import { RegistroComponent } from './registro/registro.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
 
 const rutas: Route[] = [
   {path:'', component: LoginComponent},
@@ -23,6 +24,7 @@ const rutas: Route[] = [
   {path:'menu', component: MenuComponent},
   {path:'temas', component: TemasComponent},
   {path:'perfil', component: PerfilComponent},
+  {path:'usuarios', component: UsuariosComponent},
   {path:'registro', component: RegistroComponent}
 ]
 
@@ -36,7 +38,8 @@ const rutas: Route[] = [
     MenuComponent,
     TemasComponent,
     RegistroComponent,
-    PerfilComponent
+    PerfilComponent,
+    UsuariosComponent
   ],
   imports: [
     BrowserModule,

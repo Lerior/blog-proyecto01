@@ -7,19 +7,24 @@ const URL:string = "http://localhost/pr01/public/";
   providedIn: 'root'
 })
 export class Pr01Service {
-  private cuenta = {user:'', nombre:'',rol:'', token:'' };
-  private temas = {id:'',tema:''};
+  private cuenta = {user:'', nombre:'',rol:'', token:'',edad:'',tel:'',email:'' };
+  private temas = {id:'',tema:'',descr:''};
   
-  setCuenta(user:string, nombre:string, rol:string, token:string){
+  setCuenta(user:string, nombre:string, rol:string, token:string, edad:string, tel:string, email:string){
     this.cuenta.user = user;
     this.cuenta.nombre = nombre;
     this.cuenta.rol = rol;
-    this.cuenta.token = token;
+    this.cuenta.edad = edad;
+    this.cuenta.tel = tel;
+    this.cuenta.email = email;
     //permite almacenar en el navegador
     localStorage.setItem('user',user)
     localStorage.setItem('nombre',nombre)
     localStorage.setItem('rol',rol)
     localStorage.setItem('token',token)
+    localStorage.setItem('edad',edad)
+    localStorage.setItem('tel',tel)
+    localStorage.setItem('email',email)
     
   }
 
@@ -29,6 +34,9 @@ export class Pr01Service {
    this.cuenta.nombre = localStorage.getItem('nombre');
    this.cuenta.rol = localStorage.getItem('rol');
    this.cuenta.token = localStorage.getItem('token'); 
+   this.cuenta.edad = localStorage.getItem('edad');
+   this.cuenta.tel = localStorage.getItem('tel');
+   this.cuenta.email = localStorage.getItem('email'); 
    return this.cuenta;
   }
 
@@ -43,21 +51,31 @@ export class Pr01Service {
     headers = headers.append('Authorization', this.cuenta.token);
     return this.http.get(URL + "topic", {headers:headers});
   }
-  addTopic(tema:string){
+  usuarios(){
+    let headers = new HttpHeaders;
+    headers = headers.append('Authorization', this.cuenta.token);
+    return this.http.get(URL + "usuario", {headers:headers});
+  }
+  addTopic(tema:string, descr:string){
     let headers = new HttpHeaders;
     let form = new FormData;
     form.append('tema', tema);
+    form.append('descr', descr);
     headers = headers.append('Authorization', this.cuenta.token);
     return this.http.post(URL + "topic", form, {headers:headers});
   }
-  addUser(user:string, nom:string, pass:string){
+  addUser(user:string, pass:string, nombre:string, rol:string, edad:string, tel:string, email:string){
     let headers = new HttpHeaders;
     let form = new FormData;
     form.append('user', user);
-    form.append('nom', nom);
     form.append('pass', pass);
+    form.append('nombre', nombre);
+    form.append('rol', rol);
+    form.append('edad', edad);
+    form.append('tel', tel);
+    form.append('email', email);
     headers = headers.append('Authorization', this.cuenta.token);
-    return this.http.post(URL + "user", form, {headers:headers});
+    return this.http.post(URL + "usuario", form, {headers:headers});
   }
 
   editTopic(topic){
