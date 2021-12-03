@@ -11,7 +11,7 @@ export class InicioComponent implements OnInit {
   topics:any;
   tema='';
   temaEdit:any;
-
+  
 
   constructor(private pr01: Pr01Service, private msgbox: ToastrService) { }
 
