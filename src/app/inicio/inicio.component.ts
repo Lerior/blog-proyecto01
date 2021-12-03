@@ -12,6 +12,7 @@ export class InicioComponent implements OnInit {
   tema='';
   descr='';
   temaEdit:any;
+  nval='';
   
 
   constructor(private pr01: Pr01Service, private msgbox: ToastrService) { }
@@ -38,8 +39,9 @@ export class InicioComponent implements OnInit {
     );
   }
  
-  editarTema(topic){
-    this.temaEdit = JSON.parse(JSON.stringify(topic));
+  editarTema(topic, descr){
+    this.temaEdit = JSON.parse(JSON.stringify(topic, descr));
+   // this.temaEdit = JSON.parse(JSON.stringify(descr));
   }
 
   guardarCambios(){
@@ -71,6 +73,7 @@ export class InicioComponent implements OnInit {
     console.log(this.pr01.getCuenta().user)
     this.pr01.getCuenta()
     this.llenarTabla();
+    this.temaEdit = JSON.parse(JSON.stringify(this.tema));
   }
 }
 

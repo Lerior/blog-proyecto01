@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   pass = "";
   rol = '';
 
-  login() {
+  loginL() {
     this.pr01.login(this.user, this.pass).subscribe(
       datos => {
         console.log(datos);

@@ -82,6 +82,7 @@ export class Pr01Service {
     let headers = new HttpHeaders;
     let param = new HttpParams;
     param = param.append('tema', topic.tema);
+    param = param.append('descr', topic.descr);
     headers = headers.append('Authorization', this.cuenta.token);
     console.log(this.cuenta.token);
     return this.http.put(URL + "topic/" + topic.id, {headers:headers, params: param});
