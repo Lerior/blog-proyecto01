@@ -45,7 +45,8 @@ export class InicioComponent implements OnInit {
   }
 
   guardarCambios(){
-    this.pr01.editTopic(this.temaEdit).subscribe(
+    console.log(this.temaEdit);
+    this.pr01.editTopic(this.temaEdit.id, this.temaEdit.tema, this.temaEdit.descr).subscribe(
       datos => {
         this.msgbox.success("Modificacion correcta");
         this.llenarTabla();
@@ -61,6 +62,7 @@ export class InicioComponent implements OnInit {
     this.pr01.delTopic(this.temaEdit).subscribe(
       datos => {
         this.msgbox.success("Eliminado correctamente");
+        console.log(this.temaEdit);
         this.llenarTabla();
       },
       error => {
@@ -70,10 +72,14 @@ export class InicioComponent implements OnInit {
     );
   } 
   ngOnInit(): void {
+   // if(this.topics === undefined) {return}
     console.log(this.pr01.getCuenta().user)
     this.pr01.getCuenta()
     this.llenarTabla();
     this.temaEdit = JSON.parse(JSON.stringify(this.tema));
+    this.topics = JSON.parse(JSON.stringify(this.tema));
+    this.temaEdit = JSON.parse(JSON.stringify(this.descr));
+    this.topics = JSON.parse(JSON.stringify(this.descr));
   }
 }
 

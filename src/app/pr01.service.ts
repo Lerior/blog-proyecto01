@@ -78,14 +78,15 @@ export class Pr01Service {
     return this.http.post(URL + "usuario", form, {headers:headers});
   }
 
-  editTopic(topic){
+  editTopic(id, tema:string, descr:string){
+    console.log(id, tema, descr);
     let headers = new HttpHeaders;
     let param = new HttpParams;
-    param = param.append('tema', topic.tema);
-    param = param.append('descr', topic.descr);
+    param = param.append('tema', tema);
+    param = param.append('descr', descr);
     headers = headers.append('Authorization', this.cuenta.token);
     console.log(this.cuenta.token);
-    return this.http.put(URL + "topic/" + topic.id, {headers:headers, params: param});
+    return this.http.put(URL + "topic/" + id, param, {headers:headers});
   }
 
   delTopic(topic){
