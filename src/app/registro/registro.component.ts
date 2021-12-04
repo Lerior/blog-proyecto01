@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Pr01Service } from '../pr01.service';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -16,14 +17,20 @@ export class RegistroComponent implements OnInit {
  tel='';
   rol='U';
   users:any;
-  constructor(private pr01: Pr01Service, private msgbox: ToastrService) { }
+  constructor(private rt: Router, private pr01: Pr01Service, private msgbox: ToastrService) { }
 
   ngOnInit(): void {
   }
   agregar(){
     this.pr01.addUser(this.user, this.pass, this.nombre, this.rol, this.edad, this.tel, this.email).subscribe(
       datos => {
+        this.msgbox.success("Registro exitoso!");
+        this.goLogin();
         this.llenarTabla();
+      },
+      error => {
+        this.msgbox.error("Error al resgistrar");
+        console.log(error);
       }
     );
   }
@@ -37,5 +44,8 @@ export class RegistroComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+  goLogin(){
+    this.rt.navigate(['/login']);
   }
 }
