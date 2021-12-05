@@ -30,9 +30,9 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button type="button" class="btn" id="entrar"
-                        style="background-color: rgba(0, 128, 79, 0.474);"><label style="color:white;"><i
-                                class="bi bi-plus-circle"></i> Inscribirse</label></button>
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modificaTema"
+                        style="background-color: rgba(0, 128, 79, 0.474);" (click)="mostrar(topic)" *ngIf="topic.topic_id==idsTopics.topic_id"><label
+                            style="color:white;"><i class="bi bi-plus-circle"></i> Inscribirse</label></button>
                 </div>
             </div>
             <div class="col"></div>
@@ -41,5 +41,33 @@
             </pre>
         </div>
         <div class="col"></div>
+    </div>
+</div>
+
+<!-- Modal Modificar Tema -->
+<div class="modal fade" id="modificaTema" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">¿Desea inscribirse a este tema? (Puede cancelarlo en cualquier otro momento)</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                </div>
+                    ID del Tema:
+                    <input type="text" readonly="readonly" class="form-control" id="topicEdit" placeholder="ID"
+                        [(ngModel)]="temaEdit.id">
+                
+                Nombre del Tema:
+                <input type="text" readonly="readonly" class="form-control" id="topicEdit1"
+                    placeholder="Nombre del tema" [(ngModel)]="temaEdit.tema">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                    (click)="asistir()">Inscribir</button>
+            </div>
+        </div>
     </div>
 </div>

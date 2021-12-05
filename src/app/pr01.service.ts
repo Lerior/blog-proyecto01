@@ -8,7 +8,7 @@ const URL:string = "http://localhost/pr01/public/";
 })
 export class Pr01Service {
   private cuenta = {user:'', nombre:'',rol:'', token:'',edad:'',tel:'',email:'' };
-  private temas = {id:'',tema:'',descr:''};
+  private assist = {};
   
   setCuenta(user:string, nombre:string, rol:string, token:string, edad:string, tel:string, email:string){
     this.cuenta.user = user;
@@ -51,6 +51,17 @@ export class Pr01Service {
     headers = headers.append('Authorization', this.cuenta.token);
     return this.http.get(URL + "topic", {headers:headers});
   }
+  buscarIds(user:string){
+    let headers = new HttpHeaders;
+    headers = headers.append('Authorization', this.cuenta.token);
+    return this.http.get(URL + "asistenciaU/"+ user, {headers:headers});
+  }
+  encontrarT(topic_id:string){
+    console.log(topic_id);
+    let headers = new HttpHeaders;
+    headers = headers.append('Authorization', this.cuenta.token);
+    return this.http.get(URL + "topic/"+ topic_id, {headers:headers});
+  }
   usuarios(){
     let headers = new HttpHeaders;
     headers = headers.append('Authorization', this.cuenta.token);
@@ -63,6 +74,15 @@ export class Pr01Service {
     form.append('descr', descr);
     headers = headers.append('Authorization', this.cuenta.token);
     return this.http.post(URL + "topic", form, {headers:headers});
+  }
+  addSUS(user_id:string, topic_id:string, t_nom:string){
+    let headers = new HttpHeaders;
+    let form = new FormData;
+    form.append('user_id', user_id);
+    form.append('topic_id', topic_id);
+    form.append('t_nom', t_nom);
+    headers = headers.append('Authorization', this.cuenta.token);
+    return this.http.post(URL + "asistencia", form, {headers:headers});
   }
   addUser(user:string, pass:string, nombre:string, rol:string, edad:string, tel:string, email:string){
     let headers = new HttpHeaders;

@@ -63,9 +63,9 @@ Correo:     {{(email)}}
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let topic of topics">
-                                        <td>{{topic.id}}</td>
-                                        <td>{{topic.tema}}</td>
+                                    <tr *ngFor="let id of idsTopics">
+                                        <td>{{id.topic_id}}</td>
+                                        <td>{{id.t_nom}}</td>
                                         <td class="text-end">
                                         </td>
                                     </tr>

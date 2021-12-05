@@ -15,8 +15,10 @@ export class PerfilComponent implements OnInit {
   tel='';
   email='';
   topics:any;
+  idsTopics:any;
+  tpcsAst:any;
   tema='';
-  temaEdit:any;
+  topic_id='';
   constructor(private rt: Router, private pr01: Pr01Service) { }
   llenarTabla(){
     this.pr01.topics().subscribe(
@@ -28,7 +30,32 @@ export class PerfilComponent implements OnInit {
         console.log(error);
       }
     );
+ 
   }
+  consulAsist(){
+    this.pr01.buscarIds(this.user).subscribe(
+      datos => {
+        console.log(datos);
+        this.idsTopics = datos;
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
+
+  encTemas(){
+    /* this.pr01.encontrarT(this.idsTopics).subscribe(
+      datos => {
+        console.log(datos);
+        this.tpcsAst = datos;
+      },
+      error => {
+        console.log(error);
+      }
+    ); */
+  } 
+  
   ngOnInit(): void {
     this.user = this.pr01.getCuenta().user;
     this.rol = this.pr01.getCuenta().rol;
@@ -36,8 +63,10 @@ export class PerfilComponent implements OnInit {
     this.edad=this.pr01.getCuenta().edad;
     this.tel=this.pr01.getCuenta().tel;
     this.email=this.pr01.getCuenta().email;
-    this.pr01.getCuenta()
+    this.pr01.getCuenta();
     this.llenarTabla();
+    this.consulAsist();
+    this.encTemas();
+    
   }
-
 }
