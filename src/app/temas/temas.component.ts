@@ -42,11 +42,11 @@ export class TemasComponent implements OnInit {
     console.log(this.temaEdit);
     this.pr01.addSUS(this.user_id, this.temaEdit.id, this.temaEdit.tema).subscribe(
       datos => {
-        this.msgbox.success("Modificacion correcta");
+        this.msgbox.success("Te has inscrito!");
         this.llenarTabla();
       },
       error => {
-        this.msgbox.error("Error al modiciar");
+        this.msgbox.error("Error al inscribir...");
         console.log(error);
       }
     );

@@ -66,7 +66,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
-                    (click)="asistir()">Inscribir</button>
+                    (click)="asistir()" *ngIf="temaEdit.id!=idsTopics.topic_id">Inscribir</button>
             </div>
         </div>
     </div>
